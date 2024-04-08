@@ -5,10 +5,9 @@
 Estrazione dei dati da un file .root e trasferimento ad un vettore
 */
 
-#include <TFile.h>
-#include <iostream>
-#include <vector>
-#include <string>
+#include "IncludeAllCPP.h"
+#include "IncludeAllROOT.h"
+
 
 class TFileFucker final{
 
