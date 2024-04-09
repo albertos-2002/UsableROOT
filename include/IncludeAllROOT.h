@@ -8,5 +8,8 @@
 
 //graph
 #include <TGraph.h>
-#include <TGraphError.h>
+#include <TGraphErrors.h>
 #include <TMultiGraph.h>
+
+//function
+#include <TF1.h>
