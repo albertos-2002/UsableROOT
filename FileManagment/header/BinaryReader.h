@@ -6,8 +6,8 @@ Gestione della lettura da un file scritto in binario
 L'estensione utilizzata è .rias
 */
 
-#include <ifstream>
-#include <iostream>
+#include "IncludeAllCPP.h"
+#include "IncludeAllROOT.h"
 
 class BinaryWriter{
 

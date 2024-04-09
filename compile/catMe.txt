@@ -1,0 +1,1 @@
+g++ -Wall $(root-config --cflags --libs) -I include/  -o 

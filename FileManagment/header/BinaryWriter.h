@@ -6,8 +6,9 @@ Gestione della scrittura di dati su un file in formato binario
 L'estensione utilizzata è .rias
 */
 
-#include <iostream>
-#include <fstream>
+#include "IncludeAllCPP.h"
+#include "IncludeAllROOT.h"
+
 
 class BinaryWriter{
 
