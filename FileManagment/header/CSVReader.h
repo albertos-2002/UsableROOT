@@ -20,8 +20,8 @@ class CSVReader {
   ~CSVReader();
   
   //delete copy and assigment constructor
-  RootObject           ( const RootObject& obj ) = delete;
-  RootObject& operator=( const RootObject& obj ) = delete;
+  CSVReader           ( const CSVReader& obj ) = delete;
+  CSVReader& operator=( const CSVReader& obj ) = delete;
   
   //function to read data
   void ReadThatShit();
