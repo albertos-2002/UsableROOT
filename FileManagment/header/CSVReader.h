@@ -23,10 +23,18 @@ class CSVReader {
   CSVReader           ( const CSVReader& obj ) = delete;
   CSVReader& operator=( const CSVReader& obj ) = delete;
   
+  //function to get data
+  std::map< int, std::vector<double> >* GetData();
+  std::vector<double>* GetDataColumn( int index );
+  
+  
+  private:
+  
   //function to read data
   void ReadThatShit();
   
-  private:
+  //function to store data
+  void StoreThatShit();
 
   int RowToSkip;
   int Column;
@@ -35,7 +43,10 @@ class CSVReader {
   std::string LineToDiscard;
   std::string LineToKeep;
   std::string LineToVector;
+  
+  std::vector<double> PlaceHolder;
+  std::map< int, std::vector<double> > MapOfData;
 
 };
 
-#endif CSVReader_h
+#endif 

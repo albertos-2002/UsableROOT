@@ -8,6 +8,8 @@ CSVReader::CSVReader(const std::string FileName_c, int Column_c, int RowToSkip_c
   Column = Column_c;
   FileName = FileName_c
   
+  //PlaceHolder.reserve();
+  
   ReadThatShit();
 }
   
@@ -26,6 +28,8 @@ void CSVReader::ReadThatShit(){
          << endl;
   }
   
+  cout << "reading file .....  " << endl;
+  
   //discard of lines
   for (int i=0; i < RowToSkip; i++){
       getline( CSVFile_in, LineToDiscard );
@@ -42,7 +46,7 @@ void CSVReader::ReadThatShit(){
     for(int i=0; i < Column; i++ ){
     
       if( getline( StringToStream, LineToVector, ',' ) ){
-       /*vector name*/.push_back( stod(LineToVector) );
+       PlaceHolder.push_back( stod(LineToVector) );
        LineToVector.clear();
       }
       else{
@@ -52,31 +56,55 @@ void CSVReader::ReadThatShit(){
     }
   
   }
-
+  
+  StoreThatShit();
+  
+  return;
 }
   
-  
+void CSVReader::StoreThatShit(){
 
+  //creation of vectors in map
+  for (int i=1; i <= Column; i++){
+    MapOfData[i] = new vector<double>;
+  }
   
-  //reading of lines
-
+  //filling of the map
+  int j = 0;
+  int k = 0;
   
+  for (int i=1; i <= Column; i++){
+  
+    auto tmpVector = MapOfData.at(i);
+    j=k;
     
+    while( j < PlaceHolder.size(); ){
       
-    
-    //second column
-    if( getline(StringToStream, LineToVector2, ',') ){
-      tmpDataStorage = 0;
-      tmpDataStorage = stof(LineToVector2);
-      PointPosition.push_back(tmpDataStorage);
+      tmpVector.push_back( PlaceHolder.at(j) );
+      j + Columns;
+      
     }
-    else{
-      cout << "why the fuck i can't read evend the data that i do not need " << endl;
-    }
-    
-    //second column
-    
+  
+    ++k;
     
   }
 
+/*
+Mettiamo all'interno della mappa un numero di vettori pari a quello delle colonne
+scorriamo su ognuno di questi vettori (primo for)
+  e lo conserviamo su una variabile temporanea
+il ciclo while scorre sul vettore grande che contiene tutti i dati ed
+  estrae solo quelli appartenenti ad un specidica colonna
+  il numero di colonne viene mantenuto dall'indice k
+*/
+
+  return;
+}
+
+map< int, vector<double> >* CSVReader::GetData(){
+  return &MapOfData;
+}
+
+vector<double>* CSVReader::GetDataColumn( int index ){
+  return MapOfData.at(index);
 }
