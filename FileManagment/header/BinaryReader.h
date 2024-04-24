@@ -9,7 +9,7 @@ L'estensione utilizzata è .rias
 #include "IncludeAllCPP.h"
 #include "IncludeAllROOT.h"
 
-class BinaryWriter{
+class BinaryReader {
 
   public:
   
@@ -25,4 +25,4 @@ class BinaryWriter{
 
 };
 
-#endif BinaryReader_h
+#endif

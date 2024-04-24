@@ -1,4 +1,5 @@
 #include <TFile.h>
+#include <TApplication.h>
 
 //histo
 #include <TH1F.h>

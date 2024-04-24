@@ -10,7 +10,7 @@ L'estensione utilizzata è .rias
 #include "IncludeAllROOT.h"
 
 
-class BinaryWriter{
+class BinaryWriter {
 
   public:
   
@@ -32,4 +32,4 @@ class BinaryWriter{
 };
 
 
-#endif BinaryWriter_h
+#endif 

@@ -9,7 +9,7 @@ Estrazione dei dati da un file .root e trasferimento ad un vettore
 #include "IncludeAllROOT.h"
 
 
-class TFileFucker final{
+class TFileFucker final {
 
   public:
   
@@ -28,4 +28,4 @@ class TFileFucker final{
 
 }; 
 
-#endif TFileFucker_h
+#endif
